@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umme Hadia - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #3498db, #8e44ad);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            width: 90%;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid #3498db;
+            object-fit: cover;
+        }
+
+        ul {
+            list-style: none;
+            padding: 10px;
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .button-btn {
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            border-radius: 5px;
+            text-align: center;
+            border: none;
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+
+        .button-btn:hover {
+            background: #2980b9;
+        }
+
+        .content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Contact links ke liye */
+        .content a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .content a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="umme-hadia.jpeg" alt="Profile Picture">
+            <h1>Umme Hadia</h1>
+        </div>
+
+        <section>
+            <button class="button-btn" onclick="buttonSection('personal')">Personal Details ▼</button>
+            <div id="personal" class="content">
+            <ul>
+                <li><b>Name:</b> Umme Hadia</li>
+                <li><b>Father Name:</b> Muhammad Amjad</li>
+                <li><b>Date of Birth:</b> 15-08-2004</li>
+                <li><b>Religion:</b> Islam</li>
+                <li><b>Nationality:</b> Pakistan</li>
+                <li><b>Marital Status:</b> Single</li>
+            </ul>
+            </div>
+        </section>
+
+        <section>
+            <button class="button-btn" onclick="buttonSection('qualify')">Qualification ▼</button>
+            <div id="qualify" class="content">
+                <ul>
+                    <li>Matric (2021)</li>
+                    <li>FSc Pre-Medical (2023)</li>
+                    <li>BSc Zoology (2025)</li>
+                    <li>Web Development Course (2024)</li>
+                    <li>Python Programming Course (2025)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <button class="button-btn" onclick="buttonSection('projects')">Projects ▼</button>
+            <div id="projects" class="content">
+                <ul>
+                    <li><b>Portfolio Website:</b> Built responsive website using HTML, CSS, JavaScript
+                        <br><a href="https://github.com/ummehadia/portfolio" target="_blank">View Code</a>
+                    </li>
+                    <li><b>Python Calculator:</b> Command-line calculator with Python functions
+                        <br><a href="https://github.com/ummehadia/python-calculator" target="_blank">View Code</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <button class="button-btn" onclick="buttonSection('experience')">Experience ▼</button>
+            <div id="experience" class="content">
+                <ul>
+                    <li>No job Experience</li>
+                    <li>Home Tutor</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <button class="button-btn" onclick="buttonSection('skills')">Technical Skills ▼</button>
+            <div id="skills" class="content">
+                <ul>
+                    <li>HTML5, CSS3, JavaScript</li>
+                    <li>Python Programming</li>
+                    <li>Responsive Web Design</li>
+                    <li>AI Image Creation from ideogram</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <button class="button-btn" onclick="buttonSection('languages')">Languages ▼</button>
+            <div id="languages" class="content">
+                <ul>
+                    <li>Urdu</li>
+                    <li>English </li>
+                    <li>Punjabi </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <button class="button-btn" onclick="buttonSection('contact')">Contact Me ▼</button>
+            <div id="contact" class="content">
+                <ul>
+                    <li><b>Email:</b> <a href="mailto:ummehadiashah@gmail.com">ummehadiashah@gmail.com</a></li>
+
+                    <li><b>GitHub:</b> <a href="https://github.com/syedaummehadia" target="_blank">github.com/syedaummehadia</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function buttonSection(id) {
+            var content = document.getElementById(id);
+            var button = content.previousElementSibling;
+
+            if (content.classList.contains("active")) {
+                content.classList.remove("active");
+                button.innerHTML = button.innerHTML.replace('▲', '▼');
+            } else {
+                content.classList.add("active");
+                button.innerHTML = button.innerHTML.replace('▼', '▲');
+            }
+        }
+
+        // Page load pe Personal Details open rahe
+        document.getElementById("personal").classList.add("active");
+        document.querySelector(".button-btn").innerHTML = "Personal Details ▲";
+    </script>
+</body>
+
+</html>
